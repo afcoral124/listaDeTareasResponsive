@@ -1,0 +1,211 @@
+/*AJUSTE INICIAL*/
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background-color: rgb(103, 157, 219);
+
+}
+
+/*AJUSTE INICIAL*/
+.contenedorPrincipal{
+  width: 100%;
+  border-radius: 20px;
+  margin:auto;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+header{
+  background-image: url(../imagenes/paisaje.jpg);
+  background-position: 0px -120px;
+  background-color: rgb(0, 4, 64);
+  border-radius: 20px 20px 0px 0px;
+  padding-bottom: 10px;
+}
+
+.tituloPrincipal{
+  color: white;
+  padding: 10px;
+}
+
+.contenedorFormulario{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+
+.miniContenedorTituloTarea, .miniContenedorDescripcionTarea{
+  width: 90%;
+}
+
+.tituloTarea, .descripcionTarea{
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.74);
+  color: black;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 7%;
+}
+
+.tituloTarea:hover, .descripcionTarea:hover{
+  background-color: rgba(255, 255, 255, 0.62);
+}
+
+.miniContenedorBotonAgregar{
+  margin: auto;
+}
+
+.botonAgregar{
+  margin-top: 20%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(0, 22, 101);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.25s;
+
+}
+
+
+.botonAgregar:hover {
+  background-color: rgb(4, 218, 0);
+  color:rgb(0, 22, 101);
+  box-shadow: 0px 0px 10px 10px rgb(4, 218, 0, 0.9);
+}
+
+/*--------nuevo------------*/
+.botonAgregar:not(:disabled):not(.disabled).active,
+.botonAgregar:not(:disabled):not(.disabled):active,
+.show > .btn-info.dropdown-toggle {
+     background-color: #117a8b;
+     border-color: #10707f;
+ }
+
+
+.alertas{
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5px;
+  border-radius: 10px;
+  color: rgb(96, 0, 0);
+  margin: auto;
+  background-color: rgb(255, 107, 107);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alerta{
+  width: 80%;
+}
+
+.botonCerrarAlerta{
+  border:none;
+  background-color: rgba(255, 0, 236, 0);
+  color: rgb(152, 0, 0);
+}
+
+section{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  min-height: 300px;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.tarea-item{
+  width: 90%;
+  background-color: rgb(226, 226, 226);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  border: 1px solid rgb(235, 235, 235);
+  margin:5px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) inset;
+}
+
+.tarea-item-info{
+  width: 90%;
+  margin: 10px;
+  border-bottom: 1px solid rgba(99, 68, 40, 0.84);
+  padding: 10px;
+  overflow-wrap: break-word;
+}
+
+.tarea-item-boton{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.botonEliminar{
+  margin:10px;
+  padding:10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(193, 0, 0);
+  color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.25s;
+}
+
+.botonEliminar:hover{
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.9);
+
+}
+
+/*TAMAÑOS*/
+
+@media (min-width: 350px) {
+  .miniContenedorTituloTarea, .miniContenedorDescripcionTarea{
+    width: 60%;
+  }
+
+  .miniContenedorBotonAgregar{
+    margin-left: 10%;
+  }
+
+  .tarea-item-info{
+    width: 60%;
+    border-right: 1px solid rgba(99, 68, 40, 0.84);
+    border-bottom: 0px;
+    padding: auto;
+  }
+
+  .tarea-item-boton{
+    width: 20%;
+  }
+}
+
+@media (min-width: 700px) {
+  .contenedorPrincipal{
+    width: 700px;
+    min-height: 400px;
+  }
+
+  .alertas{
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5px;
+  }
+
+  .alerta{
+    width: auto;
+  }
+}

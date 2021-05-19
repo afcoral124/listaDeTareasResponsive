@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+
+  <body>
+    <div class="contenedorPrincipal">
+
+      <header>
+        <h1 class="tituloPrincipal">Lista de tareas</h1>
+
+        <div class="contenedorFormulario">
+
+          <div class="miniContenedorTituloTarea">
+            <input class="tituloTarea" id="tituloTarea" type="text" name="tareaEntrante" value="" placeholder="Digita el titulo de tu tarea">
+          </div>
+
+          <div class="miniContenedorDescripcionTarea">
+            <textarea class="descripcionTarea" id="descripcionTarea" type="text" name="tareaEntrante" value="" placeholder="Describe tu tarea"></textarea>
+          </div>
+
+          <div class="miniContenedorBotonAgregar">
+            <button class="botonAgregar" id="botonAgregar" type="button" name="button">Agregar</button>
+          </div>
+
+        </div>
+
+        <div class="alertas" id="alertas">
+        </div>
+
+      </header>
+
+      <section id="listaTareas">
+
+      </section>
+
+    </div>
+  </body>
+  <script src="js/logica.js"></script>
+</html>
