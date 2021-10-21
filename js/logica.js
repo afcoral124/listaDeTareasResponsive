@@ -91,27 +91,38 @@ function eliminarTarea(posicionDeLaTareaAEliminar) {
 //función para imprimir las tareas en la interfaz
 function imprimirTareas() {
   //capturo las tareas almacenadas
-  let tareasAlmacenadas = JSON.parse(localStorage.getItem('tareas'));
-  document.getElementById('listaTareas').innerHTML="";
+  if(localStorage.getItem('tareas') === null){
+    //como no hay, creo un arreglo, en su primera posición inserto la tarea capturada, y guardo el arreglo de una posición
+    var tarea = {
+      titulo: "Friday Test",
+      descripcion: "I need to study the equations very carefully in order to learn well"
+    };
+    let tareasAlmacenadas = [];
+    tareasAlmacenadas.push(tarea);
+    localStorage.setItem('tareas',JSON.stringify(tareasAlmacenadas));
+  }
+  else{
+    let tareasAlmacenadas = JSON.parse(localStorage.getItem('tareas'));
+    document.getElementById('listaTareas').innerHTML="";
 
-  //por cada una de las tareas voy a hacer un proceso específico
-  tareasAlmacenadas.forEach((item, i) => {
-    //capturo los atributos de cada tarea (titulo y descripcion) y los guardo en variables
-    var tituloAuxiliar=item.titulo;
-    var descripcionAuxiliar=item.descripcion;
+    //por cada una de las tareas voy a hacer un proceso específico
+    tareasAlmacenadas.forEach((item, i) => {
+      //capturo los atributos de cada tarea (titulo y descripcion) y los guardo en variables
+      var tituloAuxiliar=item.titulo;
+      var descripcionAuxiliar=item.descripcion;
 
-    //escribo el html correspondiente a la impresión de cada tarea, en resumen, se crea el texto con la info de la tarea y un botón de eliminar, al cual se le relacionó una función para cuando se le oprima con un click
-    document.getElementById('listaTareas').innerHTML +=
-    `<div class="tarea-item">
-        <div class="tarea-item-info">
-          <h5>${tituloAuxiliar}: ${descripcionAuxiliar}</h5>
-        </div>
-        <div class="tarea-item-boton">
-          <button class="botonEliminar" id="botonEliminar" type="button" name="button" onclick="eliminarTarea(${i})">Eliminar</button>
-        </div>
-     </div>
-    `;
-  });
-
+      //escribo el html correspondiente a la impresión de cada tarea, en resumen, se crea el texto con la info de la tarea y un botón de eliminar, al cual se le relacionó una función para cuando se le oprima con un click
+      document.getElementById('listaTareas').innerHTML +=
+      `<div class="tarea-item">
+          <div class="tarea-item-info">
+            <h5>${tituloAuxiliar}: ${descripcionAuxiliar}</h5>
+          </div>
+          <div class="tarea-item-boton">
+            <button class="botonEliminar" id="botonEliminar" type="button" name="button" onclick="eliminarTarea(${i})">Eliminar</button>
+          </div>
+      </div>
+      `;
+    });
+  }
 }
 //=============================================================================================
